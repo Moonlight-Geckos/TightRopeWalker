@@ -58,11 +58,11 @@ public class PlayerEffector : MonoBehaviour
             }
             newV = new Vector3(0, 0, normalWalkingSpeed - (Mathf.Abs(bodyTarget.localPosition.x) / GameManager.Instance.PlayerBounds * unbalanceWalkModifier));
             gravityModifier += gravityModifierAdditionPerSecond * Time.deltaTime;
+            characterControl.SetAnimatorSpeed(Mathf.Max(Mathf.Abs(newV.z / normalWalkingSpeed), 0.2f));
         }
         else if (!GameManager.GameFinished)
             newV = new Vector3(0, 0, normalWalkingSpeed);
 
-        characterControl.SetAnimatorSpeed(Mathf.Max(Mathf.Abs(newV.z / normalWalkingSpeed), 0.2f));
         rigidBody.velocity = newV;
     }
 }
