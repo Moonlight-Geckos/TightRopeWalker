@@ -206,6 +206,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3833994911181269782}
+  - component: {fileID: 294878140}
   m_Layer: 0
   m_Name: RopePos
   m_TagString: RopeEnd
@@ -228,6 +229,19 @@ Transform:
   m_Father: {fileID: 3656834334782140563}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &294878140
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3833994911181269783}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 20, y: 20, z: 20}
+  m_Center: {x: 0, y: 20.17, z: -5.6}
 --- !u!1 &4176103352340605481
 GameObject:
   m_ObjectHideFlags: 0
@@ -264,7 +278,7 @@ Transform:
   - {fileID: 3833994911181269782}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: -180}
 --- !u!1 &5844291460195586582
 GameObject:
   m_ObjectHideFlags: 0
