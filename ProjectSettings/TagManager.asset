@@ -6,6 +6,11 @@ TagManager:
   tags:
   - StartRope
   - BodyTarget
+  - RopeStart
+  - RopeEnd
+  - Stick
+  - StickSource
+  - Walker
   layers:
   - Default
   - TransparentFX

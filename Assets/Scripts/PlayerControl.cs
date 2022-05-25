@@ -28,43 +28,43 @@ public class PlayerControl : MonoBehaviour
         public bool Right;
     };
     private Transform bodyTarget;
-    Queue<Move> moves;
+    private Move lastMove;
 
     #endregion
     private void Awake()
     {
         TapPanel.TapEntry.callback.AddListener(Tap);
         bodyTarget = GameObject.FindGameObjectWithTag("BodyTarget").transform;
-        moves = new Queue<Move>();
     }
 
     private void Tap(BaseEventData arg0)
     {
+        if (!GameManager.GameStarted)
+            return;
         PointerEventData pointerEventData = (PointerEventData)arg0;
         float xPos = pointerEventData.position.x;
         IEnumerator move()
         {
-            while (moves.Count > 0)
+            float elapsed = 0;
+            while (elapsed < pushDuration)
             {
-                float elapsed = 0;
-                Move move = moves.Peek();
-                while (elapsed < pushDuration)
-                {
-                    if(move.Right)
-                        bodyTarget.localPosition = new Vector3(bodyTarget.localPosition.x + Time.deltaTime * animationSpeed, 0, 0);
-                    else
-                        bodyTarget.localPosition = new Vector3(bodyTarget.localPosition.x - Time.deltaTime * animationSpeed, 0, 0);
-                    elapsed += Time.deltaTime + Time.deltaTime * (pushDecay * Math.Abs(bodyTarget.localPosition.x / GameManager.Instance.PlayerBounds));
-                    yield return new WaitForEndOfFrame();
-                }
-                moves.Dequeue();
+                if(lastMove.Right)
+                    bodyTarget.localPosition = new Vector3(bodyTarget.localPosition.x + Time.deltaTime * animationSpeed, 0, 0);
+                else
+                    bodyTarget.localPosition = new Vector3(bodyTarget.localPosition.x - Time.deltaTime * animationSpeed, 0, 0);
+                elapsed += Time.deltaTime + Time.deltaTime * (pushDecay * Math.Abs(bodyTarget.localPosition.x / GameManager.Instance.PlayerBounds));
+                yield return new WaitForEndOfFrame();
             }
         }
         if (xPos > Screen.width / 2)
-            moves.Enqueue(new Move { Right = true });
+        {
+            lastMove.Right = true;
+        }
         else
-            moves.Enqueue(new Move { Right = false });
-        if (moves.Count < 2)
-            StartCoroutine(move());
+        {
+            lastMove.Right = false;
+        }
+        StopAllCoroutines();
+        StartCoroutine(move());
     }
 }

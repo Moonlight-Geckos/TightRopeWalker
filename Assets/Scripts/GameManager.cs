@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.EventSystems;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,12 +10,22 @@ public class GameManager : MonoBehaviour
     [Range(3f, 7f)]
     private float playerBounds = 5;
 
+    [SerializeField]
+    [Range(1f, 7f)]
+    private float startDelay = 3;
+
     #endregion
 
     #region Private
 
     private static GameManager _instance;
-    private UnityEvent playerTappedEvent = new UnityEvent();
+    private static bool gameStarted = false;
+    private static bool gameFinished = false;
+
+    private static UnityEvent<bool> playerFallenEvent = new UnityEvent<bool>();
+    private static UnityEvent clearPoolsEvent = new UnityEvent();
+
+    private Timer timer;
 
     #endregion
 
@@ -30,11 +41,22 @@ public class GameManager : MonoBehaviour
         get { return playerBounds; }
     }
 
-    public UnityEvent PlayerTappedEvent
+    public static bool GameStarted
     {
-        get { return playerTappedEvent; }
+        get { return gameStarted; }
     }
-
+    public static bool GameFinished
+    {
+        get { return gameFinished; }
+    }
+    public static UnityEvent<bool> PlayerFallenEvent
+    {
+        get { return playerFallenEvent; }
+    }
+    public static UnityEvent ClearPoolsEvent
+    {
+        get { return clearPoolsEvent; }
+    }
     #endregion
 
     #region Methods
@@ -48,7 +70,28 @@ public class GameManager : MonoBehaviour
         else
         {
             _instance = this;
+            PlayerFallenEvent.AddListener((bool d) =>
+            {
+                gameStarted = false;
+                gameFinished = true;
+            });
+            timer = TimersPool.Pool.Get();
+            timer.Duration = startDelay;
+            timer.AddTimerFinishedEventListener(StartGame);
+            timer.Run();
         }
+    }
+
+    private void Update()
+    {
+        TimersPool.UpdateTimers(Time.deltaTime);
+    }
+
+    private void StartGame()
+    {
+        gameStarted = true;
+        TimersPool.Pool.Release(timer);
+        timer = null;
     }
 
     #endregion
