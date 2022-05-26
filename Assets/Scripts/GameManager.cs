@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
     private static bool gameStarted = false;
     private static bool gameFinished = false;
 
+    private Transform playerTransform;
+
     private static UnityEvent<bool> playerFallenEvent = new UnityEvent<bool>();
     private static UnityEvent playerWonEvent = new UnityEvent();
     private static UnityEvent clearPoolsEvent = new UnityEvent();
@@ -36,12 +38,14 @@ public class GameManager : MonoBehaviour
     {
         get { return _instance; }
     }
-
     public float PlayerBounds
     {
         get { return playerBounds; }
     }
-
+    public Transform PlayerTransform
+    {
+        get { return playerTransform; }
+    }
     public static bool GameStarted
     {
         get { return gameStarted; }
@@ -75,6 +79,7 @@ public class GameManager : MonoBehaviour
         else
         {
             _instance = this;
+            playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
             PlayerFallenEvent.AddListener((bool d) =>
             {
                 gameStarted = false;
