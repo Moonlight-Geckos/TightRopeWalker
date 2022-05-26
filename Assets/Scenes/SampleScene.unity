@@ -755,10 +755,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5826906149961064198, guid: 61007d0cfdc0e5e4d9062e1b742c161c,
+    - target: {fileID: 4610220524845988716, guid: 61007d0cfdc0e5e4d9062e1b742c161c,
         type: 3}
-      propertyPath: fallDistance
-      value: 45
+      propertyPath: m_LocalPosition.z
+      value: -75
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61007d0cfdc0e5e4d9062e1b742c161c, type: 3}
