@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     private static bool gameFinished = false;
 
     private static UnityEvent<bool> playerFallenEvent = new UnityEvent<bool>();
+    private static UnityEvent playerWonEvent = new UnityEvent();
     private static UnityEvent clearPoolsEvent = new UnityEvent();
 
     private Timer timer;
@@ -53,6 +54,10 @@ public class GameManager : MonoBehaviour
     {
         get { return playerFallenEvent; }
     }
+    public static UnityEvent PlayerWonEvent
+    {
+        get { return playerWonEvent; }
+    }
     public static UnityEvent ClearPoolsEvent
     {
         get { return clearPoolsEvent; }
@@ -71,6 +76,11 @@ public class GameManager : MonoBehaviour
         {
             _instance = this;
             PlayerFallenEvent.AddListener((bool d) =>
+            {
+                gameStarted = false;
+                gameFinished = true;
+            });
+            PlayerWonEvent.AddListener(() =>
             {
                 gameStarted = false;
                 gameFinished = true;

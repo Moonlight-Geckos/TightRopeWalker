@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.688
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.14215262, g: 0.3453189, b: 0.39832836, a: 0.688}
+  m_IndirectSpecularColor: {r: 0.14215283, g: 0.34531927, b: 0.39832896, a: 0.688}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -695,10 +695,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1434744075}
     m_Modifications:
-    - target: {fileID: 1501659471, guid: 61007d0cfdc0e5e4d9062e1b742c161c, type: 3}
-      propertyPath: pushDuration
-      value: 0.2
-      objectReference: {fileID: 0}
     - target: {fileID: 644658341648675258, guid: 61007d0cfdc0e5e4d9062e1b742c161c,
         type: 3}
       propertyPath: m_Name
@@ -717,12 +713,12 @@ PrefabInstance:
     - target: {fileID: 644658341648675259, guid: 61007d0cfdc0e5e4d9062e1b742c161c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 195.23
+      value: 194.64
       objectReference: {fileID: 0}
     - target: {fileID: 644658341648675259, guid: 61007d0cfdc0e5e4d9062e1b742c161c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -146.32
+      value: -72
       objectReference: {fileID: 0}
     - target: {fileID: 644658341648675259, guid: 61007d0cfdc0e5e4d9062e1b742c161c,
         type: 3}
@@ -759,15 +755,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 644658342620146326, guid: 61007d0cfdc0e5e4d9062e1b742c161c,
+    - target: {fileID: 5826906149961064198, guid: 61007d0cfdc0e5e4d9062e1b742c161c,
         type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 21.42
-      objectReference: {fileID: 0}
-    - target: {fileID: 644658342620146326, guid: 61007d0cfdc0e5e4d9062e1b742c161c,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -32.17
+      propertyPath: fallDistance
+      value: 45
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61007d0cfdc0e5e4d9062e1b742c161c, type: 3}
@@ -1705,6 +1696,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RopeLine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8741920952531950317, guid: f46032f30e346704aa39ece7a4e08c36,
+        type: 3}
+      propertyPath: m_Positions.Array.data[1].z
+      value: 35.06778
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f46032f30e346704aa39ece7a4e08c36, type: 3}

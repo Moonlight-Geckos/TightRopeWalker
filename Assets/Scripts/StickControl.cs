@@ -37,6 +37,11 @@ public class StickControl : MonoBehaviour
         StartCoroutine(fall());
 
     }
+    public void Win()
+    {
+       gameObject.SetActive(false);
+    }
+
     private void OnBecameInvisible()
     {
         StopAllCoroutines();
