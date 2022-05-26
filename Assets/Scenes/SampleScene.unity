@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.688
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.14215283, g: 0.34531927, b: 0.39832896, a: 0.688}
+  m_IndirectSpecularColor: {r: 0.14215262, g: 0.3453189, b: 0.39832836, a: 0.688}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -133,7 +133,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 2ae14926129dabf47a51582795296856,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2ae14926129dabf47a51582795296856,
         type: 3}
@@ -492,7 +492,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a184d0e0c096524387580be62e736e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravityModifier: 0.25
+  gravityModifier: 0.18
   gravityModifierAdditionPerSecond: 0
   normalWalkingSpeed: 5
   unbalanceWalkModifier: 5
@@ -695,6 +695,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1434744075}
     m_Modifications:
+    - target: {fileID: 1501659471, guid: 61007d0cfdc0e5e4d9062e1b742c161c, type: 3}
+      propertyPath: pushDuration
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 644658341648675258, guid: 61007d0cfdc0e5e4d9062e1b742c161c,
         type: 3}
       propertyPath: m_Name
@@ -754,6 +758,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 644658342620146326, guid: 61007d0cfdc0e5e4d9062e1b742c161c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 21.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 644658342620146326, guid: 61007d0cfdc0e5e4d9062e1b742c161c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -32.17
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61007d0cfdc0e5e4d9062e1b742c161c, type: 3}
