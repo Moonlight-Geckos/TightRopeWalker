@@ -22,7 +22,7 @@ public static class TimersPool
                     false,
                     maxPoolSize
                 );
-                GameManager.ClearPoolsEvent.AddListener(ClearPool);
+                EventsPool.ClearPoolsEvent.AddListener(ClearPool);
             }
             return _pool;
         }

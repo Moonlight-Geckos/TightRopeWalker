@@ -54,7 +54,7 @@ public class PlayerEffector : MonoBehaviour
 
             if (bodyTarget.localPosition.x <= -GameManager.Instance.PlayerBounds || bodyTarget.localPosition.x >= GameManager.Instance.PlayerBounds)
             {
-                GameManager.PlayerFallenEvent.Invoke(bodyTarget.localPosition.x > 0);
+                EventsPool.PlayerFallenEvent.Invoke(bodyTarget.localPosition.x > 0);
             }
             newV = new Vector3(0, 0, normalWalkingSpeed - (Mathf.Abs(bodyTarget.localPosition.x) / GameManager.Instance.PlayerBounds * unbalanceWalkModifier));
             gravityModifier += gravityModifierAdditionPerSecond * Time.deltaTime;

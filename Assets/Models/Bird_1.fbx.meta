@@ -1,8 +1,14 @@
 fileFormatVersion: 2
-guid: cfa65315fe3c006419af781461e8882d
+guid: 18d6a19cf17d9224eae6fe60c132850c
 ModelImporter:
   serializedVersion: 21202
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: -6241696510919233283
+    second: .L|.LAction
+  - first:
+      74: -6558207672014785084
+    second: .L|Fly
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -97,7 +103,7 @@ ModelImporter:
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 0
+  avatarSetup: 1
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   additionalBone: 0
   userData: 

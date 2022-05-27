@@ -4,7 +4,7 @@ public class RopeEnd : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        GameManager.PlayerWonEvent.Invoke();
+        EventsPool.PlayerWonEvent.Invoke();
         Destroy(this);
     }
 }

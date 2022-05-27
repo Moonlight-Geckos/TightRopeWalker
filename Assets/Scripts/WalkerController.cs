@@ -22,10 +22,9 @@ public class WalkerController : MonoBehaviour
         animator = GetComponent<Animator>();
         stickControl = FindObjectOfType<StickControl>();
         bodyTarget = GameObject.FindGameObjectWithTag("BodyTarget").transform;
-        GameManager.PlayerFallenEvent.AddListener(Fall);
-        GameManager.PlayerWonEvent.AddListener(Dance);
+        EventsPool.PlayerFallenEvent.AddListener(Fall);
+        EventsPool.PlayerWonEvent.AddListener(Dance);
     }
-
     private void Fall(bool right)
     {
         animator.SetTrigger("Fall");
@@ -55,7 +54,6 @@ public class WalkerController : MonoBehaviour
         }
         StartCoroutine(animate());
     }
-
     public void SetAnimatorSpeed(float speed)
     {
         animator.speed = speed;

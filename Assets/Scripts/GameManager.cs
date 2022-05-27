@@ -14,6 +14,9 @@ public class GameManager : MonoBehaviour
     [Range(1f, 7f)]
     private float startDelay = 3;
 
+    [SerializeField]
+    private float safeDistance = 5f;
+
     #endregion
 
     #region Private
@@ -23,10 +26,7 @@ public class GameManager : MonoBehaviour
     private static bool gameFinished = false;
 
     private Transform playerTransform;
-
-    private static UnityEvent<bool> playerFallenEvent = new UnityEvent<bool>();
-    private static UnityEvent playerWonEvent = new UnityEvent();
-    private static UnityEvent clearPoolsEvent = new UnityEvent();
+    private Transform ropeEnd;
 
     private Timer timer;
 
@@ -34,10 +34,6 @@ public class GameManager : MonoBehaviour
 
     #region Public
 
-    public static GameManager Instance
-    {
-        get { return _instance; }
-    }
     public float PlayerBounds
     {
         get { return playerBounds; }
@@ -46,6 +42,14 @@ public class GameManager : MonoBehaviour
     {
         get { return playerTransform; }
     }
+    public bool PlayerCloseToWin
+    {
+        get { Debug.Log(Vector3.Distance(playerTransform.position, ropeEnd.position)); return Vector3.Distance(playerTransform.position, ropeEnd.position) <= safeDistance; }
+    }
+    public static GameManager Instance
+    {
+        get { return _instance; }
+    }
     public static bool GameStarted
     {
         get { return gameStarted; }
@@ -53,18 +57,6 @@ public class GameManager : MonoBehaviour
     public static bool GameFinished
     {
         get { return gameFinished; }
-    }
-    public static UnityEvent<bool> PlayerFallenEvent
-    {
-        get { return playerFallenEvent; }
-    }
-    public static UnityEvent PlayerWonEvent
-    {
-        get { return playerWonEvent; }
-    }
-    public static UnityEvent ClearPoolsEvent
-    {
-        get { return clearPoolsEvent; }
     }
     #endregion
 
@@ -79,13 +71,14 @@ public class GameManager : MonoBehaviour
         else
         {
             _instance = this;
-            playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
-            PlayerFallenEvent.AddListener((bool d) =>
+            playerTransform = GameObject.FindGameObjectWithTag("Walker").transform;
+            ropeEnd = GameObject.FindGameObjectWithTag("RopeEnd").transform;
+            EventsPool.PlayerFallenEvent.AddListener((bool d) =>
             {
                 gameStarted = false;
                 gameFinished = true;
             });
-            PlayerWonEvent.AddListener(() =>
+            EventsPool.PlayerWonEvent.AddListener(() =>
             {
                 gameStarted = false;
                 gameFinished = true;
