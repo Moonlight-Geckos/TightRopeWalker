@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: 5257b519b04bd9140a9aebcd6b9368d4
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - balloonPopClip: {fileID: 8300000, guid: f88693079a79b58449985f6864cad2ee, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

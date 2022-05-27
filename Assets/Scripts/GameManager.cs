@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
     }
     public bool PlayerCloseToWin
     {
-        get { Debug.Log(Vector3.Distance(playerTransform.position, ropeEnd.position)); return Vector3.Distance(playerTransform.position, ropeEnd.position) <= safeDistance; }
+        get { return Vector3.Distance(playerTransform.position, ropeEnd.position) <= safeDistance; }
     }
     public static GameManager Instance
     {
