@@ -30,9 +30,10 @@ public class SkinChanger : MonoBehaviour
             skin.transform.parent = transform;
             skin.transform.localPosition = Vector3.zero;
             skin.transform.localEulerAngles = Vector3.zero;
+            skin.SetActive(true);
             cachedSkins.Add(skinNumber, skin);
         }
-        else
-            cachedSkins[skinNumber].SetActive(true);
+        currentSkin = cachedSkins[skinNumber];
+        currentSkin.SetActive(true);
     }
 }

@@ -61,15 +61,17 @@ public class Shop : MonoBehaviour
         {
             PlayerStorage.CoinsCollected -= allSkins[selectedIndex].price;
             boughtSkins += allSkins[selectedIndex].skinNumber.ToString();
+            shopItems[selectedIndex].HidePrice();
             PlayerStorage.BoughtSkins = boughtSkins;
             PlayerStorage.SkinSelected = allSkins[selectedIndex].skinNumber;
+            EventsPool.UpdateUI.Invoke();
             EventsPool.UpdateSkinEvent.Invoke(allSkins[selectedIndex].skinNumber);
         }
     }
 
     public void Select(int index)
     {
-        if (boughtSkins.IndexOf(index.ToString()) != -1)
+        if (boughtSkins.IndexOf(index.ToString()) != -1 || index == 0)
         {
             PlayerStorage.SkinSelected = index;
             EventsPool.UpdateSkinEvent.Invoke(allSkins[index].skinNumber);

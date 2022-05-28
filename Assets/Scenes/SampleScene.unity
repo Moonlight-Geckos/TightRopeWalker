@@ -2264,6 +2264,8 @@ MonoBehaviour:
   allSkins:
   - {fileID: 11400000, guid: c26ef6cf70338e64f8426d4b35696508, type: 2}
   - {fileID: 11400000, guid: d359de7dfb2b7ee4ab14d952892163c8, type: 2}
+  - {fileID: 11400000, guid: 959ffcee149729c49a3f954881096123, type: 2}
+  - {fileID: 11400000, guid: 9f5bf63f3bd61804a8d3b2cb0140ed9d, type: 2}
 --- !u!4 &2132759103 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3779921999078055147, guid: d53bedf93c8b1674c9adc1fcdc8dcccb,

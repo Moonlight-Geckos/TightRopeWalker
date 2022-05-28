@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d9e523e83d914ef4eafcb3b35d793823, type: 3}
-  m_Name: Normal Stick 2
+  m_Name: DruidStaff
   m_EditorClassIdentifier: 
-  skinSprite: {fileID: 0}
-  price: 0
-  skinObject: {fileID: 0}
-  skinNumber: 0
+  skinSprite: {fileID: 21300000, guid: 5c4de9f6ec5232546912f443399c8a63, type: 3}
+  price: 300
+  skinObject: {fileID: 3120985128958105600, guid: 7fd163fa9f3edeb4b8afb4f19b9d7162,
+    type: 3}
+  skinNumber: 3

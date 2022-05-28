@@ -12,7 +12,7 @@ public class ShopItem : MonoBehaviour
     private EventTrigger eventTrigger;
 
     private Color activeColor = Color.white;
-    private Color inactiveColor = new Color(0, 0, 0, 0);
+    private Color inactiveColor = new Color(0, 0, 0, 0.3f);
 
     public void Initialize(SkinItem skin, UnityAction selectAction)
     {
@@ -26,6 +26,7 @@ public class ShopItem : MonoBehaviour
         priceText.gameObject.SetActive(true);
         priceText.text = skin.price.ToString();
         skinImage.sprite = skin.skinSprite;
+        skinImage.color = Color.white;
         skinImage.preserveAspect = true;
         EventTrigger.Entry entry = new EventTrigger.Entry();
         entry.eventID = EventTriggerType.PointerClick;

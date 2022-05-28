@@ -31,7 +31,6 @@ public class DataHolder : MonoBehaviour
         else
         {
             _instance = this;
-            DontDestroyOnLoad(gameObject);
             for(int i = 0; i < AllSkins.Length; i++)
             {
                 allSkins[i].skinNumber = i;
