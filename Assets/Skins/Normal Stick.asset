@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9e523e83d914ef4eafcb3b35d793823, type: 3}
+  m_Name: Normal Stick
+  m_EditorClassIdentifier: 
+  skinSprite: {fileID: 21300000, guid: d37d1dfea5b54c743b1864d3c830c304, type: 3}
+  price: 0
+  skinObject: {fileID: 4895658063058929591, guid: 8a94ab4f1a62bf04c96f02933e2281f5,
+    type: 3}
+  skinNumber: 0

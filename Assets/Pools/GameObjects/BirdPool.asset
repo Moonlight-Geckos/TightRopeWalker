@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7074bcefeb4ea8349a42d7dcbb172512, type: 3}
   m_Name: BirdPool
   m_EditorClassIdentifier: 
-  pickupPrefab: {fileID: 1744013422248162379, guid: d61baf69f02c0ee48a7dd690f96077f8,
+  pickupPrefab: {fileID: 2216160801222313208, guid: b32cda96f0b4c3d4b8d3a9d61486a820,
     type: 3}
   maxPoolSize: 100
