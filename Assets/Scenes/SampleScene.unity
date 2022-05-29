@@ -2761,6 +2761,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ObstacleCliff
       objectReference: {fileID: 0}
+    - target: {fileID: 8289614028920100868, guid: 81205017afb601e4891bf47b579dd0a3,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: cea4b6d587d00d44685d5d14c7b3156e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81205017afb601e4891bf47b579dd0a3, type: 3}
 --- !u!1001 &7712855230326661261
