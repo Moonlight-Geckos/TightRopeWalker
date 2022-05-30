@@ -46,6 +46,8 @@ public class PlayerEffector : MonoBehaviour
         timer.Duration = startDelay;
         timer.AddTimerFinishedEventListener(() => { isEffecting = true; TimersPool.Pool.Release(timer); });
         EventsPool.GameStartedEvent.AddListener(() => timer.Run());
+
+        EventsPool.PlayerFallenEvent.AddListener((bool w) => Destroy(rigidBody));
         bodyTarget = GameObject.FindGameObjectWithTag("BodyTarget").transform;
         rigidBody = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>();
         characterControl = rigidBody.GetComponentInChildren<WalkerController>();
@@ -53,6 +55,8 @@ public class PlayerEffector : MonoBehaviour
 
     private void Update()
     {
+        if (rigidBody == null)
+            return;
         if (!GameManager.GameStarted)
         {
             rigidBody.velocity = Vector3.zero;

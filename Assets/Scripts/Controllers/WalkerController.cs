@@ -31,15 +31,13 @@ public class WalkerController : MonoBehaviour
         animator.SetTrigger("Fall");
         IEnumerator animate()
         {
+            Rigidbody rb = gameObject.AddComponent<Rigidbody>(); ;
             yield return new WaitForEndOfFrame();
             animator.speed = 1;
             stickControl.Fall();
-            Vector3 position = new Vector3(fallDistance/2 * (right ? 1 : -1), transform.position.y - fallDistance, transform.position.z);
-            while (transform.position.y > position.y)
-            {
-                transform.position = Vector3.Lerp(transform.position, position, Time.deltaTime * fallSpeed);
-                yield return new WaitForEndOfFrame();
-            }
+            rb.useGravity = true;
+            Vector3 newForce = new Vector3(4 * (right ? 1 : -1), -18, - 2f);
+            rb.AddForce(newForce, ForceMode.Impulse);
         }
         StartCoroutine(animate());
     }
