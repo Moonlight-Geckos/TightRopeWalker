@@ -5,7 +5,12 @@ public class ObstacleCliffController : MonoBehaviour, IInteractable
 
     private void OnTriggerEnter(Collider other)
     {
-        Interact();
+        if (other.gameObject.tag == "NoBirds")
+        {
+            return;
+        }
+        else
+            Interact();
     }
     public void Interact()
     {
