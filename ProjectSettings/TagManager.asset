@@ -11,6 +11,7 @@ TagManager:
   - Stick
   - StickSource
   - Walker
+  - NoBirds
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - UI
   - Player
   - Interactable
-  - 
+  - CoinsUI
   - 
   - 
   - 

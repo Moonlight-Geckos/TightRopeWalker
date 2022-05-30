@@ -13,6 +13,9 @@ public class HeadUI : MonoBehaviour
     private GameObject startGamePanel;
 
     [SerializeField]
+    private GameObject tutorialPanel;
+
+    [SerializeField]
     private GameObject inGamePanel;
 
     [SerializeField]
@@ -30,9 +33,16 @@ public class HeadUI : MonoBehaviour
 
     private void Awake()
     {
-        currentActivePanel = startGamePanel;
+        if(startGamePanel.activeSelf)
+            currentActivePanel = startGamePanel;
+        else
+            currentActivePanel = tutorialPanel;
         EventsPool.PlayerFallenEvent.AddListener((bool w) => FinishGame(false));
         EventsPool.PlayerWonEvent.AddListener(() => FinishGame(true));
+    }
+    public void StartTutorial()
+    {
+        ShowPanel(tutorialPanel);
     }
     public void StartGame()
     {
