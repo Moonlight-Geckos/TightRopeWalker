@@ -74,6 +74,8 @@ public class GameManager : MonoBehaviour
             playerTransform = GameObject.FindGameObjectWithTag("Walker").transform;
             ropeEnd = GameObject.FindGameObjectWithTag("RopeEnd").transform;
             EventsPool.ClearPoolsEvent.Invoke();
+            gameStarted = false;
+            gameFinished = false;
             EventsPool.GameStartedEvent.AddListener(() =>
             {
                 gameStarted = true;
@@ -117,6 +119,11 @@ public class GameManagerEditor : Editor
         {
             PlayerPrefs.DeleteAll();
             Debug.Log("Cleared all values!");
+        }
+        if (GUILayout.Button("GIVE ME SOME DAMN MONEEEYYYY"))
+        {
+            PlayerStorage.CoinsCollected = PlayerStorage.CoinsCollected + 100;
+            Debug.Log("Greedy..");
         }
     }
 }

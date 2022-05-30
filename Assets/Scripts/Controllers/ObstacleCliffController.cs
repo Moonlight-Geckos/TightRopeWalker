@@ -9,6 +9,7 @@ public class ObstacleCliffController : MonoBehaviour, IInteractable
     }
     public void Interact()
     {
-        EventsPool.PlayerFallenEvent.Invoke(transform.position.x > 0);
+        if (GameManager.GameStarted)
+            EventsPool.PlayerFallenEvent.Invoke(transform.position.x > 0);
     }
 }

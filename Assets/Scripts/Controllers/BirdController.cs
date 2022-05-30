@@ -16,13 +16,21 @@ public class BirdController : MonoBehaviour, IInteractable
 
     private void OnTriggerEnter(Collider other)
     {
-        Interact();
-        GetComponent<IDisposable>()?.Dispose();
+        if (other.gameObject.tag == "NoBirds")
+        {
+            FlyOutsideScreen(other.transform.position);
+        }
+        else
+        {
+            Interact();
+            GetComponent<IDisposable>()?.Dispose();
+        }
     }
 
     public void Interact()
     {
-        EventsPool.PlayerFallenEvent.Invoke(transform.position.x > 0);
+        if(GameManager.GameStarted)
+            EventsPool.PlayerFallenEvent.Invoke(transform.position.x > 0);
     }
 
     public void Initialize(Vector3 position)
@@ -49,6 +57,31 @@ public class BirdController : MonoBehaviour, IInteractable
 
     private void OnBecameInvisible()
     {
+        StopAllCoroutines();
         GetComponent<IDisposable>()?.Dispose();
+    }
+
+    private void FlyOutsideScreen(Vector3 pos)
+    {
+        IEnumerator flyoutside()
+        {
+            float duration = 3;
+            Vector3 originalPos = transform.position;
+            Vector3 newPos;
+            newPos = originalPos;
+            newPos += transform.forward * 30f;
+            int sign = (transform.position.y - pos.y > 0 ? 1 : -1);
+            newPos += transform.up * sign * 30;
+            rb.velocity = Vector3.zero;
+            while (duration > 0)
+            {
+                transform.position = Vector3.Lerp(transform.position, newPos, Time.deltaTime);
+                transform.localEulerAngles = transform.localEulerAngles + new Vector3(2 * sign * -1, 0, 0);
+                yield return new WaitForEndOfFrame();
+                duration -= Time.deltaTime;
+            }
+            GetComponent<IDisposable>()?.Dispose();
+        }
+        StartCoroutine(flyoutside());
     }
 }
