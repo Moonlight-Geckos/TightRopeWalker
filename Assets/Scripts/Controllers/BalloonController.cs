@@ -7,6 +7,10 @@ public class BalloonController : MonoBehaviour, IInteractable
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.tag == "NoBirds")
+        {
+            return;
+        }
         Interact();
         popParticlePool?.createItem(transform);
         Destroy(gameObject);

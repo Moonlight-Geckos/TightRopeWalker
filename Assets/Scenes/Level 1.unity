@@ -205,7 +205,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: c468738d8d0f5684c9ca430726b7a085, type: 2}
+      objectReference: {fileID: 2100000, guid: 4240d5ccde0076a479c97f859bcc3c06, type: 2}
     - target: {fileID: 919132149155446097, guid: 2ae14926129dabf47a51582795296856,
         type: 3}
       propertyPath: m_Name
@@ -1210,7 +1210,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &776201614
 Transform:
   m_ObjectHideFlags: 0
@@ -1541,7 +1541,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1164489205
 Transform:
   m_ObjectHideFlags: 0
@@ -1880,7 +1880,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: fa5f7e011c547eb4d848e635520829f8, type: 2}
+      objectReference: {fileID: 2100000, guid: 4240d5ccde0076a479c97f859bcc3c06, type: 2}
     - target: {fileID: 919132149155446097, guid: 74dfcef72f855bf46b4d3d469fe751dd,
         type: 3}
       propertyPath: m_Name
@@ -2292,7 +2292,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: fa5f7e011c547eb4d848e635520829f8, type: 2}
+      objectReference: {fileID: 2100000, guid: 4240d5ccde0076a479c97f859bcc3c06, type: 2}
     - target: {fileID: 919132149155446097, guid: 74dfcef72f855bf46b4d3d469fe751dd,
         type: 3}
       propertyPath: m_Name
@@ -2827,6 +2827,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ObstacleCliff
       objectReference: {fileID: 0}
+    - target: {fileID: 8289614028920100868, guid: 81205017afb601e4891bf47b579dd0a3,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4240d5ccde0076a479c97f859bcc3c06, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81205017afb601e4891bf47b579dd0a3, type: 3}
 --- !u!1001 &8741920953496302261

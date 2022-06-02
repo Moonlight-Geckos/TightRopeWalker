@@ -27,18 +27,32 @@ public class HeadUI : MonoBehaviour
     [SerializeField]
     private GameObject shopPanel;
 
+    [SerializeField]
+    private Transform handGesture;
+
     #endregion
 
     private GameObject currentActivePanel;
+    private Animator handAnimator;
 
     private void Awake()
     {
-        if(startGamePanel.activeSelf)
+        handAnimator = handGesture.GetComponent<Animator>();
+        if (startGamePanel.activeSelf)
             currentActivePanel = startGamePanel;
         else
             currentActivePanel = tutorialPanel;
         EventsPool.PlayerFallenEvent.AddListener((bool w) => FinishGame(false));
         EventsPool.PlayerWonEvent.AddListener(() => FinishGame(true));
+    }
+
+    private void Update()
+    {
+        handGesture.transform.position = Input.mousePosition;
+        if (Input.GetMouseButtonDown(0))
+        {
+            handAnimator.SetTrigger("Click");
+        }
     }
     public void StartTutorial()
     {
