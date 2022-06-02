@@ -1,10 +1,8 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace Baedrick.ColoredHeaders
 {
-
 	/// <summary>
 	/// 
 	/// Colored Header Preset Template

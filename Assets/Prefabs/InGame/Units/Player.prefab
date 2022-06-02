@@ -5130,7 +5130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animationSpeed: 5
-  pushDuration: 0.2
+  pushDuration: 0.15
   pushDecay: 0.15
 --- !u!54 &863126537
 Rigidbody:
