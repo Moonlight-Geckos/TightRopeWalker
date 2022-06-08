@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -24,6 +25,7 @@ public class GameManager : MonoBehaviour
 
     private Transform playerTransform;
     private Transform ropeEnd;
+    private float startDistance;
     #endregion
 
     #region Public
@@ -72,6 +74,7 @@ public class GameManager : MonoBehaviour
             _instance = this;
             playerTransform = GameObject.FindGameObjectWithTag("Walker").transform;
             ropeEnd = GameObject.FindGameObjectWithTag("RopeEnd").transform;
+            startDistance = Vector3.Distance(playerTransform.position, ropeEnd.position);
             EventsPool.ClearPoolsEvent.Invoke();
             gameStarted = false;
             gameFinished = false;
@@ -79,16 +82,22 @@ public class GameManager : MonoBehaviour
             {
                 gameStarted = true;
                 gameFinished = false;
+                TinySauce.OnGameStarted(SceneManager.GetActiveScene().buildIndex.ToString());
             });
             EventsPool.PlayerFallenEvent.AddListener((bool d) =>
             {
                 gameStarted = false;
                 gameFinished = true;
+                TinySauce.OnGameFinished(true,
+                    1 - (Vector3.Distance(playerTransform.position, ropeEnd.position) / startDistance),
+                    SceneManager.GetActiveScene().buildIndex.ToString());
             });
             EventsPool.PlayerWonEvent.AddListener(() =>
             {
                 gameStarted = false;
                 gameFinished = true;
+                TinySauce.OnGameFinished(true, 1, SceneManager.GetActiveScene().buildIndex.ToString());
+                
             });
             EventsPool.BalloonPopped.AddListener(() =>
             {
