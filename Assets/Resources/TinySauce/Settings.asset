@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faa11ec82e9746928e211e7f096812ca, type: 3}
   m_Name: Settings
   m_EditorClassIdentifier: 
-  gameAnalyticsIosGameKey: 8632b0abf2598fb40987ab4c555107db02d7e46a
-  gameAnalyticsIosSecretKey: 6afd619ce8696e061acc96ad0bd837b2
-  gameAnalyticsAndroidGameKey: 8632b0abf2598fb40987ab4c555107db02d7e46a
-  gameAnalyticsAndroidSecretKey: 6afd619ce8696e061acc96ad0bd837b2
+  gameAnalyticsIosGameKey: 6afd619ce8696e061acc96ad0bd837b2
+  gameAnalyticsIosSecretKey: 8632b0abf2598fb40987ab4c555107db02d7e46a
+  gameAnalyticsAndroidGameKey: 6afd619ce8696e061acc96ad0bd837b2
+  gameAnalyticsAndroidSecretKey: 8632b0abf2598fb40987ab4c555107db02d7e46a
   facebookAppId: 1022933288332176
   adjustIOSToken: it3znviq77y8
   adjustAndroidToken: it3znviq77y8
